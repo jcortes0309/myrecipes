@@ -68,6 +68,32 @@ footer {
 	background: $primary-color;
 	color: #FFF;
 	text-align: center;
+	margin-top: 50px;
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
+
+.chef_info {
+  margin-top: 10px;
+}
+
+.gravatar {
+  border-radius: 10px;
+}
+
+.well {
+  margin-bottom: 10px;
+  background-color: #EDEDED;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #D2D2D2;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
+

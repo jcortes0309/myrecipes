@@ -1,0 +1,30 @@
+<%= render 'shared/page_title', title: "All Recipes" %> <%# It calls the apps/views/shared/_page_title.html.erb 
+                                                        partial and sends the title All Recipes to be used in the partial %>
+
+<div class="container">
+  <%  @recipes.each do |recipe| %>
+  
+    <div class="row">
+      <div class="col-md-2">
+        <section class="chef_info center">
+          <%= gravatar_for recipe.chef, size: 100 %>    <%#-- The gravatar_for method will be created by us.  
+                                                        The size can change based on where we put the Gravatar
+                                                        in the sited --%>
+          <h5>Chef name: <%= recipe.chef.chefname %> </h5>    <%#-- This code works because we have an association --%>
+        </section><%#-- /.section --%>
+      </div><%#-- /.col-md-2 --%>
+    
+      <div class="col-lg-8 well"><%#-- well is a bootstrap class that shows a grey box around a section --%>
+        <h4> <%= link_to recipe.name, recipe_path(recipe) %> </h4>
+        <p> <%= recipe.summary %> </p>
+        <p>
+          <span class="quiet"><small> Created: <%= time_ago_in_words(recipe.created_at) %> ago </small></span> <%#-- time_ago_in_words 
+                                        is a Rails provided method that takes an argument for a date and will display the
+                                        information in a very user friendly format --%>
+        </p>
+      </div><%#-- /.col-lg-8 well --%>
+    </div><%#-- /.row --%>
+    <hr>
+    
+  <% end %>
+</div>

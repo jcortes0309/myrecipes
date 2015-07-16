@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <% flash.each do |message_type, message| %> <%#-- message_type = message type, message = actual message --%>
+      <div class="center alert alert-<%= message_type %>"><%= message %> <%#-- second class will change based on the message_type sent --%>
+        <a class="close" data-dismiss="alert">&#215;</a> <%#-- provides the x used to close the alert --%>
+      </div><%#-- /.alert alert-... --%>
+    <% end %>
+  </div><%#-- /.col-md-10 --%>
+</div><%#-- /.row --%>

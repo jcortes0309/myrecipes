@@ -4,6 +4,24 @@ Rails.application.routes.draw do
   
   get '/home', to: 'pages#home'
   
+  resources :recipes                                                # Automatically creates the same routes as shown below
+  
+  # get '/recipes', to: 'recipes#index'                             # Displays a page with all the recipes
+  # get '/recipes/new', to: 'recipes#new', as: 'new_recipe'         # Allows us to create new recipes.  
+                                                                    # The as: code will show the path in the new_recipe format
+  # post '/recipes/', to: 'recipes#create'                          # Allow us to create a new recipe with the post action (post to database)
+                                                                    # The 'recipes/new' code will render a form so we have to handle the submission
+                                                                    # of this information and post this information  to the database
+  # get '/recipes/:id/edit', to: 'recipes#edit', as: 'edit_recipe'  # Allow us to edit a recipe
+                                                                    # The as: code will show the path in the edit_recipe format
+  # patch '/recipes/:id', to: 'recipes#update'                      # Allow us to edit a recipe with the patch (or put) action
+                                                                    # The 'recipes/new' code will render a form so we have to handle the submission
+                                                                    # of this information and update the information in the the database
+  # get '/recipes/:id', to: 'recipes#show', as: 'recipe'            # Allow us to view a single recipe
+  # delete '/recipes/:id', to: 'recipes#destroy'                    # Allow us to delete / destroy a single recipe
+  # The patch and delete code do not have recipe paths (as:)
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
