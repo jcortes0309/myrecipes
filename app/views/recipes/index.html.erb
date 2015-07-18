@@ -14,15 +14,20 @@
         </section><%#-- /.section --%>
       </div><%#-- /.col-md-2 --%>
     
-      <div class="col-lg-8 well"><%#-- well is a bootstrap class that shows a grey box around a section --%>
+      <div class="col-lg-6 well"><%#-- well is a bootstrap class that shows a grey box around a section --%>
         <h4> <%= link_to recipe.name, recipe_path(recipe) %> </h4>
         <p> <%= recipe.summary %> </p>
         <p>
-          <span class="quiet"><small> Created: <%= time_ago_in_words(recipe.created_at) %> ago </small></span> <%#-- time_ago_in_words 
-                                        is a Rails provided method that takes an argument for a date and will display the
-                                        information in a very user friendly format --%>
+          <span class="quiet"><small> Created: <%= time_ago_in_words(recipe.created_at) %> ago </small></span>
+                                        <%#-- time_ago_in_words is a Rails provided method that takes an argument 
+                                        for a date and will display the information in a very user friendly format --%>
         </p>
-      </div><%#-- /.col-lg-8 well --%>
+      </div><%#-- /.col-lg-6 well --%>
+      <div class="col-md-4">
+        <%= image_tag(recipe.picture.url, size: "250x150", class: "gravatar") if recipe.picture? %>
+                                        <%#-- The if recipe.picture? part of the code will show the picture if there
+                                        is a picture to show in the database. %>
+      </div>
     </div><%#-- /.row --%>
     <hr>
     

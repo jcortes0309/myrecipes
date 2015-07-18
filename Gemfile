@@ -24,6 +24,11 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+# Classier solution for file uploads for Rails, Sinatra and other Ruby web framework
+gem 'carrierwave', '0.10.0'   # Gem added in lesson 35
+# A ruby wrapper for ImageMagick or GraphicsMagick command line.  mini replacement for RMagick 
+gem 'mini_magick', '3.8.0'    # Gem added in lesson 35
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
